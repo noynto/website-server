@@ -2,6 +2,18 @@
     "micronaut": {
         "application": {
             "name": "website"
+        },
+        "server": {
+            "port": "8080"
+        }
+    },
+    "endpoints": {
+        "all": {
+            "port": "8081"
+        },
+        "health": {
+            "enabled": true,
+            "sensitive": false
         }
     }
 }
