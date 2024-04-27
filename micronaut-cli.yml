@@ -22,4 +22,5 @@ features:
     serialization-jackson,
     shade,
     static-resources,
+    views-freemarker,
   ]
