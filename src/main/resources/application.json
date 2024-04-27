@@ -5,6 +5,14 @@
         },
         "server": {
             "port": "8080"
+        },
+        "router": {
+            "static-resources": {
+                "images": {
+                    "mapping": "/images/**",
+                    "paths": "classpath:static/images"
+                }
+            }
         }
     },
     "endpoints": {
