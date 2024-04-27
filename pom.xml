@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.orionbeaunysugot</groupId>
   <artifactId>website</artifactId>
-  <version>0.1</version>
+  <version>${version}</version>
   <packaging>${packaging}</packaging>
 
   <parent>
@@ -21,6 +21,10 @@
     <micronaut.aot.enabled>false</micronaut.aot.enabled>
     <micronaut.aot.packageName>com.orionbeaunysugot.aot.generated</micronaut.aot.packageName>
     <exec.mainClass>com.orionbeaunysugot.Application</exec.mainClass>
+    <version>${VERSION}</version>
+    <image.registry>${IMAGE_REGISTRY}</image.registry>
+    <image.path>${IMAGE_PATH}</image.path>
+    <image.version>${version}</image.version>
   </properties>
 
   <repositories>
@@ -119,6 +123,15 @@
             <arg>-Amicronaut.processing.group=com.orionbeaunysugot</arg>
             <arg>-Amicronaut.processing.module=page</arg>
           </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>com.google.cloud.tools</groupId>
+        <artifactId>jib-maven-plugin</artifactId>
+        <configuration>
+          <to>
+            <image>${image.registry}/${image.path}:${image.version}</image>
+          </to>
         </configuration>
       </plugin>
     </plugins>
